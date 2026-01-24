@@ -1,0 +1,79 @@
+@use '../../scss/variables';
+
+.footer {
+  padding-left: calc(100vw / 46);
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    letter-spacing: -0.23px;
+    line-height: 16px;
+    font-size: 14px;
+    font-weight: 200;
+    height: 88px;
+    margin-top: 55px;
+    border-top: 1px solid variables.$border-line-color;
+    color: variables.$common-font-color;
+    margin-bottom: -2.5px;
+    @media (max-width: 767px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      height: auto;
+      line-height: 55px;
+      margin-top: 50px;
+      margin-bottom: 22px;
+    }
+    @media (min-width: 768px) and (max-width: 1365px) {
+      margin-top: 52px;
+      margin-left: 7px;
+      margin-bottom: 17.5px;
+    }
+  }
+  &__item {
+    margin-top: 32px;
+    letter-spacing: 0.12px;
+    color: variables.$common-font-color;
+    &--developer {
+      width: 320px;
+      @media (max-width: 767px) {
+        line-height: 16px;
+        margin-top: 14px;
+        text-align: center;
+        padding-right: 8px;
+      }
+      @media (min-width: 768px) and (max-width: 1365px) {
+        min-width: 220px;
+      }
+    }
+    &--policy {
+      width: 220px;
+      margin-right: 104px;
+      @media (max-width: 767px) {
+        margin-top: -12px;
+        letter-spacing: 0.15px;
+        margin-right: 0;
+        padding-top: 8px;
+      }
+      @media (min-width: 768px) and (max-width: 1365px) {
+        min-width: 179px;
+        padding-left: 33px;
+        white-space: nowrap;
+      }
+    }
+    &--information {
+      margin-right: 33px;
+      text-align: right;
+      width: 326px;
+      @media (max-width: 767px) {
+        line-height: 16px;
+        text-align: center;
+        width: auto;
+        margin: -3px auto;
+        padding-right: 8px;
+      }
+      @media (min-width: 768px) and (max-width: 1365px) {
+        min-width: 150px;
+        margin-right: 24px;
+      }
+    }
+  }
+}

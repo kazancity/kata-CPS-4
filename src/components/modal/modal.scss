@@ -1,0 +1,251 @@
+@use '../../scss/variables';
+
+.page-modal {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  min-height: 100vh;
+  &__overlay {
+    min-width: calc(100vw - 320px);
+    background: variables.$background-color;
+    mix-blend-mode: normal;
+    opacity: 0.96;
+  }
+  &__form {
+    min-height: 100vh;
+    max-width: 440px;
+    box-shadow: variables.$form-shadow-color-set;
+    display: flex;
+    max-height: 100vh;
+    flex-direction: column;
+    border-left: 1px solid variables.$border-line-color;
+    position: absolute;
+    right: 0;
+    background-color: variables.$background-color;
+    @media (max-width: 359px) {
+      min-width: 320px;
+    }
+    @media (min-width: 360px) and (max-width: 767px) {
+      min-width: 360px;
+    }
+  }
+}
+.title-modal {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  margin-top: 33px;
+  margin-bottom: 24px;
+  padding: 0 24px 0 24px;
+  @media (max-width: 767px) {
+    margin-top: 97px;
+    padding: 0 14px 0 14px;
+  }
+  &__close-button {
+    position: absolute;
+    content: '';
+    width: 40px;
+    height: 40px;
+    background-image: url('../../svg/close.svg');
+    margin-left: -98px;
+    top: 32px;
+    caret-color: transparent;
+    @media (max-width: 359px) {
+      margin-left: 0;
+      top: 24px;
+    }
+    @media (min-width: 360px) and (max-width: 767px) {
+      margin-left: 9px;
+      top: 24px;
+    }
+  }
+  &__close-button:hover {
+    transition: all 0.3s ease-in-out;
+    transform: rotate(360deg);
+  }
+  &__close-button:before {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    //noinspection SassScssResolvedByNameOnly
+    @extend %animation-effect;
+  }
+  &__close-button:hover:before {
+    opacity: 0.65;
+  }
+  &__close-button:hover:active:before {
+    opacity: 1;
+    filter: blur(5px) contrast(250%) brightness(1000%);
+  }
+  &__text {
+    padding-left: 7px;
+    font-size: 24px;
+    letter-spacing: -0.6px;
+    color: variables.$text-common-color;
+    font-weight: bold;
+    caret-color: transparent;
+    @media (max-width: 767px) {
+      padding-left: 0;
+    }
+  }
+  &__text::before {
+    position: absolute;
+    top: 32px;
+    margin-left: -33px;
+    content: url('../../svg/highlight.svg');
+    @media (max-width: 767px) {
+      top: 94px;
+      margin-left: -16px;
+    }
+  }
+}
+.form-modal {
+  margin-left: 19px;
+  line-height: 1;
+  @media (max-width: 767px) {
+    margin-left: 0;
+  }
+  &__send {
+    margin-left: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 32px;
+    letter-spacing: -0.1px;
+    color: variables.$button-send-color-text;
+  }
+  &__send:before {
+    right: 32px;
+    width: 136px;
+    height: 32px;
+    border-radius: 16px;
+    //noinspection SassScssResolvedByNameOnly
+    @extend %animation-effect;
+    @media (max-width: 767px) {
+      right: 16px;
+    }
+  }
+  &__send:hover:before {
+    opacity: 0.65;
+  }
+  &__send:hover:active:before {
+    opacity: 1;
+    filter: blur(5px) contrast(250%) brightness(1000%);
+  }
+  &__label {
+    font-size: 14px;
+    color: variables.$form-text-color;
+    font-weight: 500;
+    @media (max-width: 767px) {
+      width: 290px;
+      display: block;
+      line-height: 16px;
+      padding-left: 3px;
+    }
+  }
+  &__label a {
+    color: variables.$text-warning-color;
+  }
+  &__phone {
+    height: 48px;
+    margin-top: -15px;
+    padding-left: 15px;
+    border: 1px solid variables.$form-border-color;
+    border-radius: 8px;
+    color: variables.$form-text-color;
+    width: 376px;
+    letter-spacing: -0.1px;
+    @media (max-width: 767px) {
+      width: 290px;
+      padding-left: 18px;
+    }
+    &--call {
+      margin-bottom: 16px;
+    }
+    &--chat {
+      margin-bottom: 31px;
+    }
+  }
+  &__button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 136px;
+    margin-left: auto;
+    margin-right: 20px;
+    border-radius: 16px;
+    background: variables.$button-send-color-body;
+    caret-color: transparent;
+    &--call {
+      margin-top: 16px;
+      @media (max-width: 767px) {
+        margin-top: 18px;
+        margin-right: 4px;
+      }
+    }
+    &--chat {
+      margin-top: 23px;
+      @media (max-width: 767px) {
+        margin-top: 18px;
+        margin-right: 4px;
+      }
+    }
+  }
+  &__row {
+    height: 24px;
+    width: 24px;
+    margin-right: 10px;
+    background-image: url('../../svg/goside.svg');
+    background-repeat: no-repeat;
+  }
+  &__name {
+    height: 48px;
+    margin-top: -15px;
+    margin-bottom: 31px;
+    padding-left: 15px;
+    border: 1px solid variables.$form-border-color;
+    border-radius: 8px;
+    color: variables.$form-text-color;
+    width: 376px;
+    letter-spacing: -0.1px;
+    @media (max-width: 767px) {
+      width: 290px;
+      padding-left: 18px;
+    }
+  }
+  &__email {
+    height: 48px;
+    margin-top: -15px;
+    margin-bottom: 30px;
+    padding-left: 15px;
+    border: 1px solid variables.$form-border-color;
+    border-radius: 8px;
+    color: variables.$form-text-color;
+    width: 376px;
+    letter-spacing: -0.1px;
+    @media (max-width: 767px) {
+      width: 290px;
+      margin-top: -15px;
+      padding-left: 18px;
+    }
+  }
+  &__message {
+    height: 118px;
+    margin-top: -15px;
+    margin-bottom: 14px;
+    padding-left: 15px;
+    padding-top: 15px;
+    border: 1px solid variables.$form-border-color;
+    border-radius: 8px;
+    color: variables.$form-text-color;
+    width: 376px;
+    @media (max-width: 767px) {
+      width: 290px;
+      padding-left: 16px;
+      margin-bottom: 15px;
+    }
+  }
+}
+::placeholder {
+  color: variables.$form-placeholder-color;
+}

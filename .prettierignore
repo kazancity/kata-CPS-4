@@ -1,0 +1,14 @@
+.idea/
+build/
+node_modules/
+
+*.log
+
+*.min.js
+*.min.css
+normalize.css
+
+.env
+.env.*
+
+.DS_Store

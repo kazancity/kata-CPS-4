@@ -1,0 +1,58 @@
+$background-color: #ffffff;
+$border-line-color: #d9fff5;
+$border-list-color: #41f6d7;
+$blur-strip-container-set: linear-gradient(
+  270deg,
+  #f8f8f8 16.84%,
+  rgba(248, 248, 248, 0.0001) 100%
+);
+$button-send-color-text: #ffffff;
+$button-send-color-body: #ff3e79;
+$common-font-color: #7e7e82;
+$container-background-color: #f8f8f8;
+$form-placeholder-color: #b5b6bc;
+$form-border-color: #eaeaea;
+$form-text-color: #7e7e82;
+$form-shadow-color-set:
+  -2px 0 4px rgba(69, 79, 126, 0.02),
+  16px 0 52px rgba(14, 24, 80, 0.2);
+$hover-link-color: #f66d52;
+$menu-text-active-color: #7e7e82;
+$mobile-menu-body-color: #ffffff;
+$slider-border-color: #eaeaea;
+$text-common-color: #1b1c21;
+$text-warning-color: #ff3e79;
+$text-item-color: #1b1c21;
+
+%animation-effect {
+  position: absolute;
+  content: '';
+  opacity: 0;
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  background-size: 400%;
+  transition: opacity 0.3s ease-in-out;
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}

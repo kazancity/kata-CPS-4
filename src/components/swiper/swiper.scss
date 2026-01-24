@@ -1,0 +1,108 @@
+@use '../../scss/variables';
+
+.slide-container-price {
+  background-color: variables.$container-background-color;
+  caret-color: transparent;
+  overflow: hidden;
+  font-size: 14px;
+  color: variables.$text-item-color;
+}
+.swiper {
+  @media (max-width: 767px) {
+    overflow: hidden;
+    &__pagination-technics {
+      margin-top: 0;
+    }
+    &__pagination-brands,
+    &__pagination-technics,
+    &__pagination-repairs {
+      display: flex;
+      justify-content: space-around;
+      margin: 0 auto;
+      width: 216px !important;
+      position: static !important;
+      bottom: 0 !important;
+      transform: none !important;
+    }
+    &__pagination-repairs {
+      margin-top: 14px;
+      width: 120px !important;
+    }
+  }
+  @media (min-width: 768px) {
+    display: none;
+    &__pagination-brands,
+    &__pagination-repairs,
+    &__pagination-technics {
+      display: none;
+    }
+  }
+}
+.swiper-wrapper {
+  @media (max-width: 767px) {
+    padding-left: 16px;
+    display: flex;
+  }
+}
+.slide-container-price {
+  @media (max-width: 767px) {
+    margin-top: 18px;
+    &::after {
+      content: '';
+      position: absolute;
+      height: 210px;
+      margin-top: -234px;
+      right: 0;
+      width: 24px;
+      background: variables.$blur-strip-container-set;
+    }
+  }
+}
+.slide-brands {
+  margin-top: 5px;
+}
+.slide-container {
+  @media (max-width: 767px) {
+    max-width: 1120px;
+    width: auto;
+    margin-top: 16px;
+    height: 130px;
+  }
+  @media (min-width: 768px) and (max-width: 1365px) {
+    display: none;
+  }
+}
+.slide-content {
+  @media (max-width: 767px) {
+    overflow: hidden;
+    margin-left: 0;
+    margin-top: 0;
+  }
+}
+
+.swiper-pagination-bullet {
+  @media (max-width: 767px) {
+    opacity: 1;
+    content: url('../../svg/oval_light_gray.svg');
+    width: 12px;
+    height: 12px;
+    transform: scale(1);
+    background: none;
+    left: 0 !important;
+  }
+}
+.swiper-pagination-bullets-dynamic,
+.swiper-pagination-bullet {
+  @media (max-width: 767px) {
+    transform: scale(1);
+  }
+}
+.swiper-pagination-bullet-active {
+  @media (max-width: 767px) {
+    content: url('../../svg/oval_dark_gray.svg');
+    width: 12px;
+    height: 12px;
+    background: none;
+    left: 0 !important;
+  }
+}
