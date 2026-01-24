@@ -15,11 +15,11 @@ localStorage.setItem('burgerFlag', '0');
 
 
 function openModals() {
-  if (window.innerWidth < 768) {
+  if (window.screen.width < 768) {
     pageMain.classList.add('wrap-main__absolute--320');
-  } else if (window.innerWidth < 1366) {
+  } else if (window.screen.width < 1366) {
     pageMain.classList.add('wrap-main__absolute--768');
-  } else if (window.innerWidth > 1366) {
+  } else if (window.screen.width > 1366) {
     pageMain.classList.add('wrap-main__absolute--1440');
   }
   menuTablet.style.display = 'none';
@@ -54,27 +54,27 @@ for (let prop of openModalChat) {
 
 function closeModals() {
   let burgerFlag = localStorage.getItem('burgerFlag');
-  if (window.innerWidth < 768) {
+  if (window.screen.width < 768) {
     modalWindow.style.display = 'none';
     menuTablet.style.display = 'flex';
     pageMain.classList.add('wrap-main__absolute--320');
   } else if (
     burgerFlag === '1' &&
-    window.innerWidth < 1366 &&
-    window.innerWidth > 767
+    window.screen.width < 1366 &&
+    window.screen.width > 767
   ) {
     modalWindow.style.display = 'none';
     menuTablet.style.display = 'flex';
     pageMain.classList.add('wrap-main__absolute--768');
   } else if (
     burgerFlag === '0' &&
-    window.innerWidth < 1366 &&
-    window.innerWidth > 767
+    window.screen.width < 1366 &&
+    window.screen.width > 767
   ) {
     modalWindow.style.display = 'none';
     menuTablet.style.display = 'none';
     pageMain.classList.remove('wrap-main__absolute--768');
-  } else if (burgerFlag === '0' && window.innerWidth > 1365) {
+  } else if (burgerFlag === '0' && window.screen.width > 1365) {
     modalWindow.style.display = 'none';
     menuTablet.style.display = 'flex';
     pageMain.classList.remove('wrap-main__absolute--768');
@@ -93,7 +93,7 @@ const secondMenuItem = document.querySelector(
   '.slider-left-list li:nth-child(2)'
 );
 
-if (window.innerWidth < 1365) {
+if (window.screen.width < 1366) {
   firstMenuItem.classList.add('slider-left-list__li--active');
   secondMenuItem.classList.remove('slider-left-list__li--active');
 }

@@ -8,13 +8,13 @@ for (let prop of burgerButton) {
   prop.addEventListener('click', function () {
     localStorage.setItem('burgerFlag', '1');
     pageMain.style.display = 'flex';
-    if (window.innerWidth < 768) {
+    if (window.screen.width < 768) {
       menuTablet.style.display = 'flex';
       pageMain.classList.add('wrap-main__absolute--320');
-    } else if (window.innerWidth < 1366) {
+    } else if (window.screen.width < 1366) {
       menuTablet.style.display = 'flex';
       pageMain.classList.add('wrap-main__absolute--768');
-    } else if (window.innerWidth > 1366) {
+    } else if (window.screen.width > 1366) {
       menuTablet.style.display = 'flex';
       pageMain.classList.add('wrap-main__absolute--1440');
     }
