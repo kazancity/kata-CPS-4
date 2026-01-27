@@ -73,19 +73,19 @@ li {
   }
   &__absolute--320 {
     width: 100vw;
-    position: absolute;
+    position: fixed;
     height: 676px;
     overflow-y: hidden;
   }
   &__absolute--768 {
     width: 100vw;
-    position: absolute;
+    position: fixed;
     height: 1024px;
     overflow-y: hidden;
   }
   &__absolute--1440 {
     width: 100vw;
-    position: absolute;
+    position: fixed;
     height: 940px;
     overflow-y: hidden;
   }
