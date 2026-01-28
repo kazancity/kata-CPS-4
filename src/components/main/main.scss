@@ -71,22 +71,9 @@ li {
   @media (max-width: 1365px) {
     width: 100vw;
   }
-  &__absolute--320 {
+  &__fixed {
     width: 100vw;
     position: fixed;
-    height: 676px;
-    overflow-y: hidden;
-  }
-  &__absolute--768 {
-    width: 100vw;
-    position: fixed;
-    height: 1024px;
-    overflow-y: hidden;
-  }
-  &__absolute--1440 {
-    width: 100vw;
-    position: fixed;
-    height: 940px;
     overflow-y: hidden;
   }
 }

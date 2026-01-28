@@ -15,13 +15,7 @@ localStorage.setItem('burgerFlag', '0');
 
 
 function openModals() {
-  if (window.screen.width < 768) {
-    pageMain.classList.add('wrap-main__absolute--320');
-  } else if (window.screen.width < 1366) {
-    pageMain.classList.add('wrap-main__absolute--768');
-  } else if (window.screen.width > 1366) {
-    pageMain.classList.add('wrap-main__absolute--1440');
-  }
+  pageMain.classList.add('wrap-main__fixed');
   menuTablet.style.display = 'none';
   modalWindow.style.display = 'flex';
 }
@@ -57,7 +51,7 @@ function closeModals() {
   if (window.screen.width < 768) {
     modalWindow.style.display = 'none';
     menuTablet.style.display = 'flex';
-    pageMain.classList.add('wrap-main__absolute--320');
+    pageMain.classList.add('wrap-main__fixed');
   } else if (
     burgerFlag === '1' &&
     window.screen.width < 1366 &&
@@ -65,7 +59,7 @@ function closeModals() {
   ) {
     modalWindow.style.display = 'none';
     menuTablet.style.display = 'flex';
-    pageMain.classList.add('wrap-main__absolute--768');
+    pageMain.classList.add('wrap-main__fixed');
   } else if (
     burgerFlag === '0' &&
     window.screen.width < 1366 &&
@@ -73,14 +67,13 @@ function closeModals() {
   ) {
     modalWindow.style.display = 'none';
     menuTablet.style.display = 'none';
-    pageMain.classList.remove('wrap-main__absolute--768');
+    pageMain.classList.remove('wrap-main__fixed');
   } else if (burgerFlag === '0' && window.screen.width > 1365) {
     modalWindow.style.display = 'none';
     menuTablet.style.display = 'flex';
-    pageMain.classList.remove('wrap-main__absolute--768');
+    pageMain.classList.remove('wrap-main__fixed');
   }
   localStorage.setItem('burgerFlag', '0');
-  pageMain.classList.remove('wrap-main__absolute--1440');
 }
 
 closeModalButtonChat.addEventListener('click', closeModals);

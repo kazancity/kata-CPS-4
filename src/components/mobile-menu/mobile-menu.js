@@ -8,16 +8,8 @@ for (let prop of burgerButton) {
   prop.addEventListener('click', function () {
     localStorage.setItem('burgerFlag', '1');
     pageMain.style.display = 'flex';
-    if (window.screen.width < 768) {
-      menuTablet.style.display = 'flex';
-      pageMain.classList.add('wrap-main__absolute--320');
-    } else if (window.screen.width < 1366) {
-      menuTablet.style.display = 'flex';
-      pageMain.classList.add('wrap-main__absolute--768');
-    } else if (window.screen.width > 1366) {
-      menuTablet.style.display = 'flex';
-      pageMain.classList.add('wrap-main__absolute--1440');
-    }
+    menuTablet.style.display = 'flex';
+    pageMain.classList.add('wrap-main__fixed');
     overlayTablet.style.display = 'flex';
     menuMobile.style.display = 'flex';
     iconCross.style.display = 'list-item';
@@ -28,9 +20,7 @@ function closeMobile() {
   pageMain.style.display = 'flex';
   menuTablet.style.display = 'none';
   iconCross.style.display = 'none';
-  pageMain.classList.remove('wrap-main__absolute--320');
-  pageMain.classList.remove('wrap-main__absolute--768');
-  pageMain.classList.remove('wrap-main__absolute--1440');
+  pageMain.classList.remove('wrap-main__fixed');
 }
 iconCross.addEventListener('click', closeMobile);
 overlayTablet.addEventListener('click', closeMobile);
