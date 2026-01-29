@@ -21,6 +21,7 @@
     "watch": "webpack --mode development --watch"
   },
   "devDependencies": {
+    "@babel/cli": "^7.28.6",
     "@babel/core": "^7.28.6",
     "@babel/preset-env": "^7.28.6",
     "@eslint/compat": "^2.0.1",
